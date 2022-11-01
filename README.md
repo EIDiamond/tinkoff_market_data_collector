@@ -1,6 +1,6 @@
 ## Description
 Main goal is download and keep market data for internal purposes, such as manual analyze, 
-historical backtesting ([backtesting/tinkoff_tests_py](https://github.com/EIDiamond/invest-tools/tree/main/backtesting/tinkoff_tests_py) project),
+historical backtesting [trade_backtesting](https://github.com/EIDiamond/trade_backtesting) project),
 ML purposes etc.
 
 The tool is using [Tinkoff Invest Python gRPC client](https://github.com/Tinkoff/invest-python) api and collecting data from MOEX Exchange.
@@ -102,6 +102,20 @@ Direction: 1 - Buy, 2 - sell
 
 #### Last Prices
 Headers in last_prices csv file: **price**, **time**
+
+## Use case
+1. Download market data using [tinkoff_market_data_collector](https://github.com/EIDiamond/tinkoff_market_data_collector) project
+2. Research data and find an idea for trade strategy using [analyze_market_data](https://github.com/EIDiamond/analyze_market_data) project
+3. Test and tune your trade strategy using [trade_backtesting](https://github.com/EIDiamond/trade_backtesting) project
+4. Trade by [invest-bot](https://github.com/EIDiamond/invest-bot) and your own strategy.
+5. Profit!
+
+### Example
+Your can find example in code:
+- Let's imagine your have great idea to invent your own idicator. Rsi idicator was selected for example.
+- RSI Calculation alghoritm has been written for [research tool](https://github.com/EIDiamond/analyze_market_data/blob/main/analyze/rsi_calculation/rsi_calculation_analyze.py)
+- It has been tested by [backtesting](https://github.com/EIDiamond/trade_backtesting/blob/main/trade_system/strategies/rsi_example/rsi_strategy.py)
+- And now you are able to make your desicion.
 
 ## Logging
 All logs are written in logs/collector.log.
